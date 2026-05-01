@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+.App{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.navsite{
+    background-color: #ECEAFF;
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.display-page{
+    background-color: white;
+    height: 100vh;
+    width: 80%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo{
+    background-color: aqua;
+    height: 50px;
+    width: 100px;
+    margin-bottom: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.dashboard, .analytics, .transactions{
+    height: 50px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ECEAFF;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+:is(.dashboard, .transactions, .analytics):hover{
+    background-color: #343438;
+    color: white;
+    transition: all 0.2s ease;
+    cursor: pointer
+}
+
+.dashboard.active,
+.transactions.active,
+.analytics.active {
+  background-color: #343438;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+

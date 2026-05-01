@@ -1,0 +1,143 @@
+.main{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.navbar{
+    background-color: white;
+    width: 95%;
+    height:  11vh;
+    display: flex;
+
+}
+
+.functionality{
+    width: 95%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.budgettrack{
+    width: 95%;
+    height: 23vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 15px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    
+}
+.analytics-preview{
+    width: 95%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-sizing: border-box;
+    padding: 15px;
+    padding-top:10px;
+    padding-bottom: 5px;
+}
+.transactions-preview{
+    width: 95%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-sizing: border-box;
+    padding: 15px;
+    padding-top:10px;
+    padding-bottom: 5px;
+}
+.welcome{
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+}
+.navicons{
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+.navicon{
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border-style: solid;
+    border-color: #D0D0D4;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 5px;
+    align-items: center;
+}
+.navprofile{
+    background-color: white;
+    height: 45px;
+    width: 200px;
+    border-style: solid;
+    border-color: #D0D0D4;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin-left: 5px;
+    padding-left: 3px;
+    align-items: center;
+    box-sizing: border-box;
+}
+.profilepicture{
+    height: 35px;
+    width: 35px;
+    border-radius: 30px;
+    background-color: #82828C;
+    margin-right: 3px;
+}
+.profileinfo{
+    display: flex;
+    flex-direction: column;
+}
+.profilename{
+    font-size: 14px;
+    font-weight: 600;
+}
+.profileemail{
+    font-size:10px;
+}
+.welcomename{
+    background-color: white;
+    width: 100%;
+    height: 70%;
+    font-weight: 600;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.welcomemessage{
+    background-color: white;
+    color: #82828C;
+    font-weight: bold;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
