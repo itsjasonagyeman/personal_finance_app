@@ -24,7 +24,7 @@ function NavProfile(){
 export default function Navbar({titlename, titlemessage}) {
   return (
     <div className='navbar'>
-        <div className='title'>
+        <div className='navtitle'>
           <div className='titlename'>{titlename}</div>
           <div className='titlemessage'>{titlemessage}</div>
         </div>

@@ -8,15 +8,17 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     box-sizing: border-box;
     padding: 8px;
     padding-left: 15px;
-    justify-content: space-between;
+
 }
 
 .title{
     font-weight: bold;
     font-size: 18px;
+    width: 100%;
 }
 
 .amount{
