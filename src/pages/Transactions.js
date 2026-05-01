@@ -3,10 +3,21 @@ import './Transactions.css'
 import Navbar from '../components/Navbar'
 import DashboardFunctionalityCard from '../components/DashboardFunctionalityCard'
 import Transactionheader from '../components/Transactionheader'
+import { useState } from 'react'
 
 export default function Transactions() {
+  const [headers, setHeaders] = useState([
+  { backgroundColor: '#D0D0D4', showShadow: false },
+  { backgroundColor: 'white', showShadow: true }
+  ])
+  function addNewHeader() {
+    setHeaders([
+      ...headers,
+      { backgroundColor: 'white', showShadow: true }
+    ])
+  }
   return (
-    <div class='transactionsmain'>
+    <div className='transactionsmain'>
       <Navbar titlename='Transactions' titlemessage='Overview of your activities'/>
       <div className='transactionsfunctionality'>
         <div className='transfunca'>
@@ -14,12 +25,15 @@ export default function Transactions() {
           <DashboardFunctionalityCard cardwidth='130px' text='25 Jun - 28 Jun' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>
           <DashboardFunctionalityCard cardwidth='35px' text='c' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>
         </div>
-        <DashboardFunctionalityCard cardwidth='100px' text='Add new' hoverbackgroundcolor='black' hovertextcolor='white' hovercursor='pointer'/>
+        <DashboardFunctionalityCard cardwidth='100px' text='Add new' hoverbackgroundcolor='black' hovertextcolor='white' hovercursor='pointer' onClickFunction={addNewHeader}/>
       </div>
-      <Transactionheader backgroundColor='#D0D0D4' showShadow={false}/>      
-      <Transactionheader backgroundColor='white' showShadow={true}/>      
-      <Transactionheader backgroundColor='white' showShadow={true}/>      
-      <Transactionheader backgroundColor='white' showShadow={true}/>      
+      {headers.map((header, index) => (
+        <Transactionheader
+          key={index}
+          backgroundColor={header.backgroundColor}
+          showShadow={header.showShadow}
+        />
+      ))}        
     </div>
   )
 }
