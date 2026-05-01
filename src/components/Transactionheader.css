@@ -1,0 +1,26 @@
+.transheaderrow{
+    height: 40px;
+    width: 94%;
+    background-color: #82828C;
+    margin-left: 15px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: center;
+    padding-top:8px ;
+    margin-top: 2px;
+}
+
+.transheaderrow div{
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.transactiondate, .transactionamount, .transactionmethod, .transactioncategory, .transactionsatus{
+    width: 15%
+}
+.transactionpayment{
+    width: 25%;
+}

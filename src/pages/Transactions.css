@@ -1,0 +1,17 @@
+.transactionsmain{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.transactionsfunctionality{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    padding-right: 48px;
+}
+.transfunca{
+    display: flex;
+    flex-direction: row;
+}

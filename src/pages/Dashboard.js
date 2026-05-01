@@ -11,8 +11,8 @@ export default function Dashboard() {
     <div className='dashboardmain'>
       <Navbar titlename='Welcome Back, Adelaide' titlemessage="It's time to manage your finances"/>
       <div className='functionality'>
-        <DashboardFunctionalityCard cardwidth='30px' text='a'/>
-        <DashboardFunctionalityCard cardwidth='100px' text='This Month'/>
+        <DashboardFunctionalityCard cardwidth='30px' text='a' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>
+        <DashboardFunctionalityCard cardwidth='100px' text='This Month' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>
       </div>
       <div className='budgettrack'>
         <BudgetTrackCard title='Total Balance' amount='$30,000' percent='3.6%' color='red'/>
