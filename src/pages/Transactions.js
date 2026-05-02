@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import DashboardFunctionalityCard from '../components/DashboardFunctionalityCard'
 import Transactionheader from '../components/Transactionheader'
 import { useState } from 'react'
+import Addnewform from '../components/Addnewform'
 
 export default function Transactions() {
   const [headers, setHeaders] = useState([
@@ -18,6 +19,7 @@ export default function Transactions() {
   }
   return (
     <div className='transactionsmain'>
+      <Addnewform/>
       <Navbar titlename='Transactions' titlemessage='Overview of your activities'/>
       <div className='transactionsfunctionality'>
         <div className='transfunca'>

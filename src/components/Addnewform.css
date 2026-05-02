@@ -1,0 +1,63 @@
+.form-box-overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-box{
+    height: 600px;
+    width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 8px;
+    box-sizing: border-box;
+}
+.addnew-titlebar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px 0px rgba(154, 151, 151, 0.7);;
+    width: 100%;
+}
+.close-button{
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.close-button:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.addnewform-title{
+    font-weight: bold;
+}
