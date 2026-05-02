@@ -11,6 +11,7 @@ export default function Transactions() {
   { backgroundColor: '#D0D0D4', showShadow: false },
   { backgroundColor: 'white', showShadow: true }
   ])
+  const [showForm, setShowForm] = useState(false)
   function addNewHeader() {
     setHeaders([
       ...headers,
@@ -19,7 +20,7 @@ export default function Transactions() {
   }
   return (
     <div className='transactionsmain'>
-      <Addnewform/>
+      {showForm && <Addnewform setShowForm = {setShowForm}/>}
       <Navbar titlename='Transactions' titlemessage='Overview of your activities'/>
       <div className='transactionsfunctionality'>
         <div className='transfunca'>
@@ -27,7 +28,7 @@ export default function Transactions() {
           <DashboardFunctionalityCard cardwidth='130px' text='25 Jun - 28 Jun' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>
           <DashboardFunctionalityCard cardwidth='35px' text='c' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>
         </div>
-        <DashboardFunctionalityCard cardwidth='100px' text='Add new' hoverbackgroundcolor='black' hovertextcolor='white' hovercursor='pointer' onClickFunction={addNewHeader}/>
+        <DashboardFunctionalityCard cardwidth='100px' text='Add new' hoverbackgroundcolor='black' hovertextcolor='white' hovercursor='pointer' onClickFunction={() => setShowForm(true)}/>
       </div>
       {headers.map((header, index) => (
         <Transactionheader
