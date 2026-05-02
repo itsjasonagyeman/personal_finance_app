@@ -61,3 +61,73 @@
 .addnewform-title{
     font-weight: bold;
 }
+
+.addnewtext{
+    font-size: 25px;
+    font-weight: bold;
+    color: #D0D0D4;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 28px;
+    margin-bottom: 15px;
+    margin-top: 90px;
+}
+
+.text-field-grid{
+    height: 35%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 40px);
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+.text-field-grid input{
+    height: 40px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #D0D0D4;
+    padding-left: 6px;
+}
+
+.canceldonerow{
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
+.doneButton, .cancelButton{
+    height: 100%;
+    width: 100px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+:is(.doneButton, .cancelButton):hover{
+    background-color: #D0D0D4;
+    color: black;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
