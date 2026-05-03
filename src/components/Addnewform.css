@@ -98,8 +98,8 @@
     border-color: #D0D0D4;
     padding-left: 6px;
     padding-right: 6px;
+    text-transform: uppercase;
 }
-
 select{
     height: 47px;
     color: black;

@@ -7,20 +7,11 @@ import { useState } from 'react'
 import Addnewform from '../components/Addnewform'
 
 export default function Transactions() {
-  const [headers, setHeaders] = useState([
-  { backgroundColor: '#D0D0D4', showShadow: false },
-  { backgroundColor: 'white', showShadow: true }
-  ])
   const [showForm, setShowForm] = useState(false)
-  function addNewHeader() {
-    setHeaders([
-      ...headers,
-      { backgroundColor: 'white', showShadow: true }
-    ])
-  }
+  const [transactions, setTransactions] = useState([])
   return (
     <div className='transactionsmain'>
-      {showForm && <Addnewform setShowForm = {setShowForm}/>}
+      {showForm && <Addnewform setShowForm = {setShowForm} addTransactions = {setTransactions}/>}
       <Navbar titlename='Transactions' titlemessage='Overview of your activities'/>
       <div className='transactionsfunctionality'>
         <div className='transfunca'>
@@ -30,11 +21,18 @@ export default function Transactions() {
         </div>
         <DashboardFunctionalityCard cardwidth='100px' text='Add new' hoverbackgroundcolor='black' hovertextcolor='white' hovercursor='pointer' onClickFunction={() => setShowForm(true)}/>
       </div>
-      {headers.map((header, index) => (
+      <Transactionheader backgroundColor='#D0D0D4' showShadow={false} date='DATE' amount='AMOUNT' name='NAME' method='METHOD' category='CATEGORY' status='STATUS' />
+      {transactions.map((tx, index) => (
         <Transactionheader
           key={index}
-          backgroundColor={header.backgroundColor}
-          showShadow={header.showShadow}
+          backgroundColor='white'
+          showShadow={true}
+          date={tx.date}
+          amount={tx.amount}
+          name={tx.name}
+          method={tx.method}
+          category={tx.category}
+          status={tx.status}
         />
       ))}        
     </div>
