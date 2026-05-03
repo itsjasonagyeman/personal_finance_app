@@ -11,6 +11,30 @@
     padding-top:8px ;
     margin-top: 2px;
 }
+.transactionstatus{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.transactiondate{
+    margin-left: 15px;
+}
+.deleteButton{
+    height: 60%;
+    width: 20px;
+    background-color: red;
+    border-radius: 5px;
+    margin-top: 2px;
+    margin-left: 13px;
+    transition: all 0.2s ease;
+}
+
+.deleteButton:hover{
+    background-color: rgb(212, 2, 2);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
 
 .transheaderrow div{
     font-weight: 600;
@@ -18,7 +42,7 @@
     flex-direction: row;
     justify-content: start;
 }
-.transactiondate, .transactionamount, .transactionmethod, .transactioncategory, .transactionsatus{
+.transactiondate, .transactionamount, .transactionmethod, .transactioncategory, .transactionstatus{
     width: 15%
 }
 .transactionpayment{

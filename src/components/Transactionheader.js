@@ -1,7 +1,7 @@
 import React from 'react'
 import './Transactionheader.css'
 
-export default function Transactionheader({backgroundColor, showShadow, date, amount, name, method, category, status}) {
+export default function Transactionheader({backgroundColor, showShadow, date, amount, name, method, category, status, activateDelete}) {
   return (
     <div className='transheaderrow' style={{
         backgroundColor: backgroundColor,
@@ -12,7 +12,10 @@ export default function Transactionheader({backgroundColor, showShadow, date, am
         <div className='transactionpayment'>{name}</div>
         <div className='transactionmethod'>{method}</div>
         <div className='transactioncategory'>{category}</div>
-        <div className='transactionstatus'>{status}</div>
+        <div className='transactionstatus'>
+          {status}
+          {activateDelete && <div className='deleteButton'></div>}
+        </div>
     </div>
   )
 }

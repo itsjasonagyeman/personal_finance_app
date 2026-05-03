@@ -21,7 +21,7 @@ export default function Transactions() {
         </div>
         <DashboardFunctionalityCard cardwidth='100px' text='Add new' hoverbackgroundcolor='black' hovertextcolor='white' hovercursor='pointer' onClickFunction={() => setShowForm(true)}/>
       </div>
-      <Transactionheader backgroundColor='#D0D0D4' showShadow={false} date='DATE' amount='AMOUNT' name='NAME' method='METHOD' category='CATEGORY' status='STATUS' />
+      <Transactionheader backgroundColor='#D0D0D4' showShadow={false} date='DATE' amount='AMOUNT' name='PAYMENT NAME' method='METHOD' category='CATEGORY' status='STATUS' activateDelete={false} />
       {transactions.map((tx, index) => (
         <Transactionheader
           key={index}
@@ -33,6 +33,7 @@ export default function Transactions() {
           method={tx.method}
           category={tx.category}
           status={tx.status}
+          activateDelete={true}
         />
       ))}        
     </div>

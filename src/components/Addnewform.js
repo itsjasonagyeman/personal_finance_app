@@ -41,7 +41,7 @@ export default function Addnewform({setShowForm, addTransactions}) {
                 value={formData.name} 
                 onChange={(e) => setFormData({
                   ...formData,
-                  name: e.target.value})}                
+                  name: e.target.value.toUpperCase()})}                
               />
               <select 
                 name='method' 
@@ -53,9 +53,9 @@ export default function Addnewform({setShowForm, addTransactions}) {
                   method: e.target.value})}                
               >
                 <option value='' disabled >Method</option>
-                <option value='momo'>MOMO</option>
-                <option value='visa'>VISA</option>
-                <option value='other'>Other</option>
+                <option value='MOMO'>MOMO</option>
+                <option value='VISA'>VISA</option>
+                <option value='OTHER'>Other</option>
               </select>
               <select 
                 name='category' 
