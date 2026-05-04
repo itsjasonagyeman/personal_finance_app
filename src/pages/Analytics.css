@@ -1,0 +1,43 @@
+.baseAnalytics{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.chart1{
+    margin-top: 30px;
+    height: 240px;
+    width: 100%;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #D0D0D4;
+}
+
+.bottomCharts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chart2{
+    margin-top: 30px;
+    height: 240px;
+    width: 48%;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #D0D0D4;
+}
+
+.chart3{
+    margin-top: 30px;
+    height: 240px;
+    width: 48%;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #D0D0D4;
+}

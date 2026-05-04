@@ -20,9 +20,9 @@ export default function Addnewform({setShowForm, addTransactions, setFormData, f
                   date: e.target.value})}
               />
               <input 
-                type='text' 
+                type='number' 
                 placeholder='Amount'
-                value={formData.amount} 
+                value={Number(formData.amount)} 
                 onChange={(e) => setFormData({
                   ...formData,
                   amount: e.target.value})}                
