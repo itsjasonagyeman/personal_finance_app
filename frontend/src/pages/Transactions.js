@@ -5,6 +5,7 @@ import DashboardFunctionalityCard from '../components/DashboardFunctionalityCard
 import Transactionheader from '../components/Transactionheader'
 import Addnewform from '../components/Addnewform'
 import Popup from '../components/Popup'
+import { useEffect } from 'react';
 
 export default function Transactions() {
   const [showForm, setShowForm] = useState(false)
@@ -21,11 +22,23 @@ export default function Transactions() {
   })
   console.log(transactionindex)
   console.log(formData)
-  function deleteTransaction(index) {
-    setTransactions(prev =>
-      prev.filter((_, i) => i !== index)
-    );
-}
+  function deleteTransaction(id) {
+    fetch(`http://127.0.0.1:8000/transactions/${id}`, {
+      method: "DELETE"
+    })
+    .then(() => {
+      setTransactions(prev =>
+        prev.filter(tx => tx.id !== id)
+      );
+    })
+    .catch(err => console.log(err));
+  }
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/transactions")
+      .then(res => res.json())
+      .then(data => setTransactions(data))
+      .catch(err => console.log(err));
+  }, []);
 
   return (
     <div className='transactionsmain'>
@@ -44,7 +57,7 @@ export default function Transactions() {
       {transactions.map((tx, index) => {
         return(
           <Transactionheader
-            key={index}
+            key={tx.id}
             backgroundColor='white'
             showShadow={true}
             date={tx.date}
@@ -55,7 +68,7 @@ export default function Transactions() {
             status={tx.status}
             activateDelete={true}
             setShowPopup= {setShowPopup}
-            onDeleteClick={()=>{setTransactionIndex(index)}}
+            onDeleteClick={()=>{setTransactionIndex(tx.id)}}
           />
         )
       })}        

@@ -22,7 +22,7 @@ export default function Addnewform({setShowForm, addTransactions, setFormData, f
               <input 
                 type='number' 
                 placeholder='Amount'
-                value={Number(formData.amount)} 
+                value={formData.amount} 
                 onChange={(e) => setFormData({
                   ...formData,
                   amount: e.target.value})}                
@@ -77,9 +77,39 @@ export default function Addnewform({setShowForm, addTransactions, setFormData, f
               </select>
             </div>
             <div className='canceldonerow'>
-              <div className='doneButton' onClick={()=> {
-                addTransactions(prev => [...prev, formData])
-                setShowForm(false)}}>Done</div>
+              <div className='doneButton' onClick={() => {
+
+                fetch("http://127.0.0.1:8000/transactions", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify(formData)
+                })
+                .then(res => res.json())
+                .then(() => {
+
+                fetch("http://127.0.0.1:8000/transactions")
+                .then(res => res.json())
+                .then(data => addTransactions(data));
+
+                setShowForm(false);
+
+                setFormData({
+                  date: '',
+                  amount: '',
+                  name: '',
+                  method: '',
+                  category: '',
+                  status: ''
+                });
+
+                })
+                .catch(err => console.log(err));
+
+              }}>
+              Done
+              </div>
               <div className='cancelButton' onClick={()=> setShowForm(false)}>Cancel</div>
             </div>
         </div>
