@@ -1,15 +1,7 @@
 import React, {useState} from 'react'
 import './Addnewform.css'
 
-export default function Addnewform({setShowForm, addTransactions}) {
-  const [formData, setFormData] = useState({
-    date: '',
-    amount: '',
-    name: '',
-    method: '',
-    category: '',
-    status: ''
-  })
+export default function Addnewform({setShowForm, addTransactions, setFormData, formData}) {
   return (
     <div className='form-box-overlay'>
         <div className='form-box'>
