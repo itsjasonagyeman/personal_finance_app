@@ -9,19 +9,19 @@ function NavIcon(){
   )
 }
 
-function NavProfile(){
+function NavProfile({profilename, profileemail}){
   return(
     <div className='navprofile'>
       <div className='profilepicture'></div>
       <div className='profileinfo'>
-        <div className='profilename'>Adelaide Agyeman</div>
-        <div className='profileemail'>adelaideagyeman@gmail.com</div>
+        <div className='profilename'>{profilename}</div>
+        <div className='profileemail'>{profileemail}</div>
       </div>
     </div>
   )
 }
 
-export default function Navbar({titlename, titlemessage}) {
+export default function Navbar({titlename, titlemessage, profilename, profileemail}) {
   return (
     <div className='navbar'>
         <div className='navtitle'>
@@ -31,7 +31,7 @@ export default function Navbar({titlename, titlemessage}) {
         <div className='navicons'>
           <NavIcon/>
           <NavIcon/>
-          <NavProfile/>
+          <NavProfile profilename={profilename} profileemail={profileemail}/>
         </div>
       </div>
   )

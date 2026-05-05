@@ -61,6 +61,7 @@ export default function Addnewform({setShowForm, addTransactions, setFormData, f
                 <option value='' disabled>Category</option>
                 <option value='INCOME'>Income</option>
                 <option value='EXPENSE'>Expense</option>
+                <option value='SAVINGS'>Savings</option>
               </select>
               <select 
                 name='status' 
