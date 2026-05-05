@@ -1,0 +1,21 @@
+.mainbody{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.signpage{
+    background-color: white;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infopage{
+    background-color: #D0D0D4;
+    height: 100vh;
+    width: 50vw;
+}
+

@@ -5,11 +5,11 @@ import React, {useState, useEffect} from 'react'
 function TransactionInfoCard({date, amount, paymentName, method,category}) {
   return (
     <div className='transactioninfo'>
-            <div>{date}</div>
-            <div>{amount}</div>
-            <div>{paymentName}</div>
-            <div>{method}</div>
-            <div>{category}</div>
+            <div className='tridate'>{date}</div>
+            <div className='triamount'>{amount}</div>
+            <div className='triname'>{paymentName}</div>
+            <div className='trimethod'>{method}</div>
+            <div className='tricategory'>{category}</div>
     </div>
   )
 }
@@ -32,11 +32,11 @@ export default function TransactionsPreviewCard() {
             <div></div>
         </div>
         <div className='titleinfo'>
-            <div>Date</div>
-            <div>Amount</div>
-            <div>Payment Name</div>
-            <div>Method</div>
-            <div>Category</div>
+            <div className='titledate'>Date</div>
+            <div className='titleamount'>Amount</div>
+            <div className='titleinfoname'>Payment Name</div>
+            <div className='titlemethod'>Method</div>
+            <div className='titlecategory'>Category</div>
         </div>
         {most_recent_transaction && <TransactionInfoCard  date={most_recent_transaction.date} amount={`$${most_recent_transaction.amount}`} paymentName={most_recent_transaction.name} method={most_recent_transaction.method} category={most_recent_transaction.category}/>}
         {next_recent_transaction && <TransactionInfoCard  date={next_recent_transaction.date} amount={`$${next_recent_transaction.amount}`} paymentName={next_recent_transaction.name} method={next_recent_transaction.method} category={next_recent_transaction.category}/>}

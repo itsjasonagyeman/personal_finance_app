@@ -26,7 +26,7 @@
 .titleinfo{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     background-color: #D0D0D4;
     font-size: 14px;
     font-weight: 500;
@@ -40,7 +40,7 @@
 .transactioninfo{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     box-shadow: 0px 2px 0px 0px rgba(154, 151, 151, 0.7);
     font-size: 16px;
     font-weight: 500;
@@ -51,3 +51,14 @@
     box-sizing: border-box;
     margin-top: 9px;
 }
+
+.tridate, .triamount, .triname, .trimethod, .tricategory{
+    height: 100%;
+    width: 100%;
+}
+
+.titledate, .titleamount, .titleinfoname, .titlemethod, .titlecategory{
+    height: 100%;
+    width: 100%;
+}
+

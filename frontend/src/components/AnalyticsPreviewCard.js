@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {Chart as ChartJS, defaults} from 'chart.js/auto'
+import { defaults} from 'chart.js/auto'
 import { Bar} from 'react-chartjs-2'
 import './AnalyticsCardPreview.css'
 
@@ -22,9 +22,9 @@ export default function AnalyticsPreviewCard() {
 
         if (!grouped[date]) {
             grouped[date] = {
-            income: 0,
-            expense: 0,
-            savings: 0
+                income: 0,
+                expense: 0,
+                savings: 0
             };
         }
 
@@ -62,19 +62,19 @@ export default function AnalyticsPreviewCard() {
                             label: 'Income',
                             data: incomes,
                             borderRadius: 5,
-                            backgroundColor: '#343438'
+                            backgroundColor: '#1ed136'
                         },
                         {
                             label: 'Expenses',
                             data: expenses,
                             borderRadius: 5,
-                            backgroundColor: '#56565E'
+                            backgroundColor: '#ff0000'
                         },
                         {
                             label: 'Savings',
                             data: savings,
                             borderRadius: 5,
-                            backgroundColor: '#19191a'
+                            backgroundColor: '#2121dd'
                         },
                     ]
                 }}

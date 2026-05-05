@@ -44,7 +44,7 @@ export default function Transactions() {
     <div className='transactionsmain'>
       {showPopup && <Popup setShowPopup ={setShowPopup} deleteTransaction= {deleteTransaction} transactionindex={transactionindex}/>}
       {showForm && <Addnewform setShowForm = {setShowForm} addTransactions = {setTransactions} setFormData ={setFormData} formData = {formData}/>}
-      <Navbar titlename='Transactions' titlemessage='Overview of your activities'/>
+      <Navbar titlename='Transactions' titlemessage='Overview of your activities' profilename='Jason Agyeman' profileemail='jasonagyeman@test.com'/>
       <div className='transactionsfunctionality'>
         <div className='transfunca'>
           <DashboardFunctionalityCard cardwidth='35px' text='c' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>

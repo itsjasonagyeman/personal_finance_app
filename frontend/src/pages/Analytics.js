@@ -48,10 +48,44 @@ export default function Analytics() {
         incomes.push(grouped[date].income);
         expenses.push(grouped[date].expense);
         savings.push(grouped[date].savings);
+  }
+  let nameTotals = {};
+  for (let i = 0; i < transactions.length; i++) {
+    let tx = transactions[i];
+
+    let name = tx.name;
+    let amount = Number(tx.amount);
+
+    if (!nameTotals[name]) {
+      nameTotals[name] = 0;
     }
+
+    nameTotals[name] = nameTotals[name] + amount;
+  }
+  let nameLabels = [];
+  let nameValues = [];
+
+  for (let key in nameTotals) {
+    nameLabels.push(key);
+    nameValues.push(nameTotals[key]);
+  }
+  function generateColors(length) {
+    const colors = [
+      '#ff6384', '#36a2eb', '#ffce56',
+      '#4bc0c0', '#9966ff', '#ff9f40',
+      '#2ecc71', '#e74c3c', '#3498db'
+    ];
+
+    let result = [];
+    for (let i = 0; i < length; i++) {
+      result.push(colors[i % colors.length]);
+    }
+
+    return result;
+  }
   return (
     <div className='baseAnalytics'>
-      <Navbar titlename='Analytics' titlemessage='Track your spending habits'/>
+      <Navbar titlename='Analytics' titlemessage='Track your spending habits' profilename='Jason Agyeman' profileemail='jasonagyeman@test.com'/>
       <div className='chart1'>
           <Bar 
             data={{
@@ -61,19 +95,19 @@ export default function Analytics() {
                   label: 'Income',
                   data: incomes,
                   borderRadius: 5,
-                  backgroundColor: '#343438'
+                  backgroundColor: '#1ed136'
                 },
                 {
                   label: 'Expenses',
                   data: expenses,
                   borderRadius: 5,
-                  backgroundColor: '#56565E'
+                  backgroundColor: '#ff0000'
                 },
                 {
                   label: 'Savings',
                   data: savings,
                   borderRadius: 5,
-                  backgroundColor: '#19191a'
+                  backgroundColor: '#2121dd'
                 },
               ]
             }}
@@ -83,11 +117,12 @@ export default function Analytics() {
         <div className='chart2'>
           <Doughnut
             data={{
-              labels:['Food', 'Water', 'Transport'],
+              labels:nameLabels,
               datasets:[
                 {
                   label: 'Spending Overview',
-                  data:[80, 100, 120]
+                  data:nameValues,
+                  backgroundColor: generateColors(nameValues.length)
                 }
                 
               ]
@@ -97,11 +132,12 @@ export default function Analytics() {
         <div className='chart3'>
           <Line
             data={{
-              labels:['Food', 'Water', 'Transport'],
+              labels:nameLabels,
               datasets:[
                 {
                   label: 'Spending Overview',
-                  data:[80, 100, 120]
+                  data:nameValues,
+                  backgroundColor: generateColors(nameValues.length)
                 }
                 
               ]
