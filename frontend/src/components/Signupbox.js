@@ -16,7 +16,7 @@ export default function Signupbox() {
         <div className='emailsignuptitle'>Email</div>
         <input type='text' placeholder='Enter your email address' className='emailsignupbox'/>
         <div className='passwordsignuptitle'>Password</div>
-        <input type='text' placeholder='Enter your password' className='passwordsignupbox'/>
+        <input type='password' placeholder='Enter your password' className='passwordsignupbox'/>
         <div className='signupmainbutton'>Sign up</div>
         <div className='continuewith'>
             <div className='googlesignupbutton'>G</div>
