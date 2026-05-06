@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Transactionheader.css'
 
 export default function Transactionheader({backgroundColor, showShadow, date, amount, name, method, category, status, activateDelete, setShowPopup, onDeleteClick}) {
