@@ -2,11 +2,14 @@ import React, {useState, useEffect} from 'react'
 import './Analytics.css'
 import Navbar from '../components/Navbar'
 import { Bar, Doughnut, Line } from 'react-chartjs-2'
+import { authFetch } from '../authfetch'
+import { useCurrentUser } from '../useCurrentUser'
 
 export default function Analytics() {
+  const userProfile = useCurrentUser()
   const [transactions, setTransactions] = useState([])
   useEffect(()=>{
-    fetch('http://127.0.0.1:8000/transactions')
+    authFetch('http://127.0.0.1:8000/transactions')
     .then(res => res.json())
     .then(data => setTransactions(data))
     .catch(err => console.log(err))
@@ -85,7 +88,7 @@ export default function Analytics() {
   }
   return (
     <div className='baseAnalytics'>
-      <Navbar titlename='Analytics' titlemessage='Track your spending habits' profilename='Jason Agyeman' profileemail='jasonagyeman@test.com'/>
+      <Navbar titlename='Analytics' titlemessage='Track your spending habits' profilename={userProfile?.fullName ?? ''} profileemail={userProfile?.email ?? ''}/>
       <div className='chart1'>
           <Bar 
             data={{

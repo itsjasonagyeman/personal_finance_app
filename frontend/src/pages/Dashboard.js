@@ -5,11 +5,14 @@ import BudgetTrackCard from '../components/BudgetTrackCard'
 import AnalyticsPreviewCard from '../components/AnalyticsPreviewCard'
 import TransactionsPreviewCard from '../components/TransactionsPreviewCard'
 import Navbar from '../components/Navbar'
+import { authFetch } from '../authfetch'
+import { useCurrentUser } from '../useCurrentUser'
 
 export default function Dashboard() {
+  const userProfile = useCurrentUser()
   const [transaction, setTransactions] = useState([])
   useEffect (()=> {
-    fetch("http://127.0.0.1:8000/transactions")
+    authFetch("http://127.0.0.1:8000/transactions")
     .then(res => res.json())
     .then(data => setTransactions(data))
     .catch(err => console.log(err))
@@ -39,7 +42,7 @@ export default function Dashboard() {
 
   return (
     <div className='dashboardmain'>
-      <Navbar titlename='Welcome Back, Jason' titlemessage="It's time to manage your finances" profilename='Jason Agyeman' profileemail='jasonagyeman@test.com'/>
+      <Navbar titlename={`Welcome Back, ${userProfile?.firstName ?? ''}`} titlemessage="It's time to manage your finances" profilename={userProfile?.fullName ?? ''} profileemail={userProfile?.email ?? ''}/>
       <div className='functionality'>
         <DashboardFunctionalityCard cardwidth='30px' text='a' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>
         <DashboardFunctionalityCard cardwidth='100px' text='This Month' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>

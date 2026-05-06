@@ -6,12 +6,15 @@ import Transactionheader from '../components/Transactionheader'
 import Addnewform from '../components/Addnewform'
 import Popup from '../components/Popup'
 import { useEffect } from 'react';
+import { authFetch } from '../authfetch'
+import { useCurrentUser } from '../useCurrentUser'
 
 export default function Transactions() {
   const [showForm, setShowForm] = useState(false)
   const [showPopup, setShowPopup] = useState(false)
   const [transactions, setTransactions] = useState([])
   const [transactionindex, setTransactionIndex] = useState(null)
+  const userProfile = useCurrentUser()
   const [formData, setFormData] = useState({
       date: '',
       amount: '',
@@ -23,7 +26,7 @@ export default function Transactions() {
   console.log(transactionindex)
   console.log(formData)
   function deleteTransaction(id) {
-    fetch(`http://127.0.0.1:8000/transactions/${id}`, {
+    authFetch(`http://127.0.0.1:8000/transactions/${id}`, {
       method: "DELETE"
     })
     .then(() => {
@@ -34,7 +37,7 @@ export default function Transactions() {
     .catch(err => console.log(err));
   }
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/transactions")
+    authFetch("http://127.0.0.1:8000/transactions")
       .then(res => res.json())
       .then(data => setTransactions(data))
       .catch(err => console.log(err));
@@ -44,7 +47,7 @@ export default function Transactions() {
     <div className='transactionsmain'>
       {showPopup && <Popup setShowPopup ={setShowPopup} deleteTransaction= {deleteTransaction} transactionindex={transactionindex}/>}
       {showForm && <Addnewform setShowForm = {setShowForm} addTransactions = {setTransactions} setFormData ={setFormData} formData = {formData}/>}
-      <Navbar titlename='Transactions' titlemessage='Overview of your activities' profilename='Jason Agyeman' profileemail='jasonagyeman@test.com'/>
+      <Navbar titlename='Transactions' titlemessage='Overview of your activities' profilename={userProfile?.fullName ?? ''} profileemail={userProfile?.email ?? ''}/>
       <div className='transactionsfunctionality'>
         <div className='transfunca'>
           <DashboardFunctionalityCard cardwidth='35px' text='c' hoverbackgroundcolor='white' hovertextcolor='black' hovercursor='default'/>

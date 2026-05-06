@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { defaults} from 'chart.js/auto'
 import { Bar} from 'react-chartjs-2'
 import './AnalyticsCardPreview.css'
+import { authFetch } from '../authfetch';
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -9,7 +10,7 @@ defaults.responsive = true;
 export default function AnalyticsPreviewCard() {
     const [transactions, setTransactions] = useState([])
     useEffect(()=>{
-        fetch('http://127.0.0.1:8000/transactions')
+        authFetch('http://127.0.0.1:8000/transactions')
         .then(res => res.json())
         .then(data => setTransactions(data))
         .catch(err => console.log(err))

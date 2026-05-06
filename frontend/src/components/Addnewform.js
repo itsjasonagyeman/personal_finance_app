@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './Addnewform.css'
+import { authFetch } from '../authfetch';
 
 export default function Addnewform({setShowForm, addTransactions, setFormData, formData}) {
   return (
@@ -80,7 +81,7 @@ export default function Addnewform({setShowForm, addTransactions, setFormData, f
             <div className='canceldonerow'>
               <div className='doneButton' onClick={() => {
 
-                fetch("http://127.0.0.1:8000/transactions", {
+                authFetch("http://127.0.0.1:8000/transactions", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json"
@@ -90,7 +91,7 @@ export default function Addnewform({setShowForm, addTransactions, setFormData, f
                 .then(res => res.json())
                 .then(() => {
 
-                fetch("http://127.0.0.1:8000/transactions")
+                authFetch("http://127.0.0.1:8000/transactions")
                 .then(res => res.json())
                 .then(data => addTransactions(data));
 

@@ -1,3 +1,4 @@
+import { authFetch } from '../authfetch'
 import './TransactionsPreviewCard.css'
 import React, {useState, useEffect} from 'react'
 
@@ -18,7 +19,7 @@ function TransactionInfoCard({date, amount, paymentName, method,category}) {
 export default function TransactionsPreviewCard() {
   const [transactions, setTransactions] = useState([])
   useEffect(()=>{
-    fetch('http://127.0.0.1:8000/transactions')
+    authFetch('http://127.0.0.1:8000/transactions')
     .then(res => res.json())
     .then(data => setTransactions(data))
     .catch(err => console.log(err))
